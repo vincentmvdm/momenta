@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Challenges{% endblock %}
+{% block navbar_toggle %}
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+{% endblock %}
+{% block navbar_right %}
+  <li><a href="/challenges">Challenges</a></li>
+  <li><a href="/profile">Profile</a></li>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row page-content">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <a href="/challenges"><i class="fa fa-chevron-left text-center"></i>Challenges</a>
+      <h3 class="text-center">Challenge with Gabriel</h3>
+      <span class='text-center">Current Streak: 0</span>
+    </div>
+  </div>
+</div>
+{% endblock %}

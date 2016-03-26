@@ -49,8 +49,8 @@ body {
 }
 
 .page-content {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .btn-primary {
@@ -76,6 +76,11 @@ hr {
   }
 }
 
-.fa.fa-chevron-right:hover {
-  color: cyan;
+a {
+  color: #333;
+}
+
+a:hover {
+  color: $blue;
+  text-decoration: none;
 }
