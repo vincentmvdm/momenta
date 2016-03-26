@@ -17,6 +17,7 @@
   <div class="row page-content">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1>Challenges</h1>
+      <h2>Challenges</h2>
       <table class="table">
         <thead>
           <tr>
@@ -32,7 +33,24 @@
             <td>{{cha['user1']}}</td>
             <td>{{cha['user2']}}</td>
             <td>{{cha['created_at']}}</td>
-            <td class="challenge-view"><a href="/challenge/{{cha['id']}}"><i class="fa fa-chevron-right text-center"></i></a></td>
+            <td class="challenge-view"><a href="/challenge/{{cha['id']}}"><i class="fa fa-chevron-right pull-right"></i></a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h2>Followers</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Users</th>
+            <th></th
+          </tr>
+        </thead>
+        <tbody>
+          {% for cha in data['followers'] %}
+          <tr>
+            <td>{{cha['login']}}</td>
+            <td><button type="button" class="btn btn-primary btn-sm pull-right">Challenge</button></td>
           </tr>
           {% endfor %}
         </tbody>

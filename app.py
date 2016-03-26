@@ -73,7 +73,10 @@ def prof():
 
 @app.route('/challenges')
 def challenges():
+    challenge_user = github.get('user/followers')
+    print(challenge_user)
     jsondata = {'result': [u.as_dict() for u in Challenge.query.all()]}
+    jsondata['followers'] = challenge_user
     return render_template('challenges.html', data=jsondata)
 
 @app.route('/challenge/<cid>')
