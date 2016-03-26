@@ -8,7 +8,7 @@ html {
 
 body {
   // min-height: 2000px;
-  padding-top: 70px;
+  padding-top: 50px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
@@ -36,4 +36,14 @@ body {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
           justify-content: center;
+}
+
+.img-rounded.img-profile {
+  width: 150px;
+  height: 150px;
+}
+
+.page-content {
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
