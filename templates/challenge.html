@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %}Challenges{% endblock %}
+{% block title %}Current Challenge{% endblock %}
 {% block navbar_toggle %}
   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
     <span class="sr-only">Toggle navigation</span>
@@ -16,9 +16,20 @@
 <div class="container">
   <div class="row page-content">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <a href="/challenges"><i class="fa fa-chevron-left text-center"></i>Challenges</a>
+      <ol class="breadcrumb">
+        <li><a href="/challenges">Challenges</a></li>
+        <li class="active">CURRENT CHALLENGE</li>
+      </ol>
       <h3 class="text-center">Challenge with {{data['user1']}} or {{data['user2']}} depending on who you are</h3>
-      <span class="text-center">Active streak: {{data['is_streak']}}</span>
+    </div>
+  </div>
+</div>
+<div class="flex-wrapper-challenge">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <h1 class="text-center">Active streak: {{data['is_streak']}}</span>
+      </div>
     </div>
   </div>
 </div>

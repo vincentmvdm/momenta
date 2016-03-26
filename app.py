@@ -61,7 +61,7 @@ def authorized(oauth_token):
     global user
     user = github.get('user')['login']
     print(user)
-    return redirect('/profile')
+    return redirect('/challenges')
 
 @app.route('/profile')
 def prof():

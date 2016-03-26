@@ -80,3 +80,23 @@ a:hover {
   color: $blue;
   text-decoration: none;
 }
+
+.flex-wrapper-challenge {
+  height: calc(100vh - #{$navbar-height} - #{$footer-height} - 157px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.breadcrumb {
+  background-color: rgba(255, 255, 255, 0);
+}
