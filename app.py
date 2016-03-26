@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request,redirect
 import os
 from flask.ext.github import GitHub
-from flask.ext.mysqldb import SQLAlchemy
+from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.cors import CORS
 import json
 import psycopg2
