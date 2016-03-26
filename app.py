@@ -41,7 +41,7 @@ class Challenge(db.Model):
     def __repr__(self):
         return '<(%r and %r) at %r>' % (self.user1, self.user2, self.start)
     def as_dict(self):
-        return {'user1': self.user1, 'user2': self.user2, 'created_at': self.start}
+        return {'user1': self.user1, 'user2': self.user2, 'created_at': (datetime.datetime.now() - self.start).days}
 
 
 @app.route('/')
@@ -73,7 +73,7 @@ def prof():
 @app.route('/challenges')
 def challenges():
     jsondata = {'result': [u.as_dict() for u in Challenge.query.all()]}
-    return render_template('challenges.html', data=jsonify(jsondata))
+    return render_template('challenges.html', data=jsondata)
 
 @github.access_token_getter
 def token_getter():

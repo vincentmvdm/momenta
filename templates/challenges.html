@@ -16,22 +16,25 @@
 <div class="container">
   <div class="row page-content">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-
       <h1>Challenges</h1>
       <table class="table">
         <thead>
           <tr>
-            <th>Challenges</th>
-            <th>Start Date</th>
-            <th></th>
+            <th>User 1</th>
+            <th>User 2</th>
+            <th>Days</th>
+            <th></th
           </tr>
         </thead>
         <tbody>
+          {% for cha in data['result'] %}
           <tr>
-            <td>Challenge with Gabriel</td>
-            <td>March 26</td>
+            <td>{{cha['user1']}}</td>
+            <td>{{cha['user2']}}</td>
+            <td>{{cha['created_at']}}</td>
             <td class="challenge-view"><i class="fa fa-chevron-right text-center"></i></td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
