@@ -1,3 +1,5 @@
+$blue: #009FE8;
+
 /* Fixed navbar and sticky footer styles
 -------------------------------------------------- */
 
@@ -11,6 +13,8 @@ body {
   padding-top: 50px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .footer {
@@ -46,4 +50,8 @@ body {
 .page-content {
   padding-top: 48px;
   padding-bottom: 48px;
+}
+
+.btn-primary {
+  border: 0px;
 }

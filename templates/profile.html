@@ -1,5 +1,17 @@
 {% extends "layout.html" %}
-{% block title %}{{data['login']}}{% endblock %}
+{% block title %}Profile{% endblock %}
+{% block navbar_toggle %}
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+{% endblock %}
+{% block navbar_right %}
+  <li><a href="#">Title</a></li>
+  <li class="active"><a href="#">Profile<span class="sr-only">(current)</span></a></li>
+{% endblock %}
 {% block content %}
 <div class="container">
   <div class="row page-content">
@@ -15,8 +27,6 @@
       {{data['bio']}}<br>
       <strong>Followers</strong><br>
       {{data['followers']}}<br>
-      <strong>Challenges</strong><br>
-      null
     </div>
   </div>
 </div>
