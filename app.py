@@ -6,6 +6,7 @@ from flask.ext.cors import CORS
 import json
 import psycopg2
 import urlparse
+from challenge import Challenge
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 fp = os.path.join(SITE_ROOT, 'config.json')
@@ -47,8 +48,7 @@ def authorized(oauth_token):
 def challenges():
     cursor = mysql.connect().cursor()
     cursor.execute("SELECT * from challenges")
-    print cursor
-    return jsonify({'data': cursor.fetchone()})
+    return jsonify(Challenge.query.all())
 
 @github.access_token_getter
 def token_getter():
