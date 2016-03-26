@@ -2,6 +2,7 @@ from flask import Flask, render_template, request,redirect
 import os
 from flask.ext.github import GitHub
 from flask.ext.mysqldb import SQLAlchemy
+from flask.ext.cors import CORS
 import json
 import psycopg2
 import urlparse
@@ -19,9 +20,11 @@ app.config['GITHUB_CLIENT_SECRET'] = creds['secret']
 
 github = GitHub(app)
 
-pp = Flask(__name__)
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
+
+CORS(app)
 
 @app.route('/')
 def index():
