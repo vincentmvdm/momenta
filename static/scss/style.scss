@@ -67,3 +67,15 @@ hr {
     margin: 20px 0;
   }
 }
+
+.table {
+  border: 1px solid #ddd;
+
+  td.challenge-view {
+    text-align: center;
+  }
+}
+
+.fa.fa-chevron-right:hover {
+  color: cyan;
+}
