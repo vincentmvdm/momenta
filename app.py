@@ -28,7 +28,8 @@ def authorized(oauth_token):
     global token
     token = oauth_token
     data = github.get('user')
-    return render_template('', data=data)
+    data['token'] = token
+    return render_template('profile.html', data=data)
 
 @github.access_token_getter
 def token_getter():
