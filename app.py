@@ -75,6 +75,10 @@ def challenges():
     jsondata = {'result': [u.as_dict() for u in Challenge.query.all()]}
     return render_template('challenges.html', data=jsonify(jsondata))
 
+@app.route('/challenge')
+def challenge():
+    return render_template('challenge.html')
+
 @github.access_token_getter
 def token_getter():
     return token
