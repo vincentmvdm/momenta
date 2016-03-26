@@ -15,6 +15,8 @@ fp = os.path.join(SITE_ROOT, 'config.json')
 app = Flask(__name__)
 global token
 token = None
+global user
+user = None
 with open(fp) as cred:
     creds = json.load(cred)
 
@@ -55,9 +57,18 @@ def login():
 def authorized(oauth_token):
     global token
     token = oauth_token
-    data = github.get('user')
-    data['token'] = token
-    return render_template('profile.html', data=data)
+    global user
+    user = github.get('user')['login']
+    print(user)
+    return redirect('/profile')
+
+@app.route('/profile')
+def prof():
+    if user is None:
+        return redirect('/')
+    else:
+        data = github.get('user')
+        return render_template('profile.html', data=data)
 
 @app.route('/challenges')
 def challenges():
