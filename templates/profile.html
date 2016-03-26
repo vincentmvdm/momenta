@@ -9,8 +9,8 @@
   </button>
 {% endblock %}
 {% block navbar_right %}
-  <li><a href="#">Title</a></li>
-  <li class="active"><a href="#">Profile<span class="sr-only">(current)</span></a></li>
+  <li><a href="/challenges">Challenges</a></li>
+  <li class="active"><a href="/callback">Profile<span class="sr-only">(current)</span></a></li>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -22,7 +22,7 @@
       <strong>Username</strong><br>
       {{data['login']}}<br>
       <strong>Location</strong><br>
-      {{data['location']}}<br>    
+      {{data['location']}}<br>
       <strong>Biography</strong><br>
       {{data['bio']}}<br>
       <strong>Followers</strong><br>

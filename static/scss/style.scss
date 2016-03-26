@@ -1,6 +1,7 @@
 $blue: #009FE8;
 $navbar-height: 50px;
 $footer-height: 61px;
+$line-height: 1.5;
 
 /* Fixed navbar and sticky footer styles
 -------------------------------------------------- */
@@ -15,6 +16,7 @@ body {
   padding-top: $navbar-height;
   margin-bottom: $footer-height;
   background-color: #FFF;
+  line-height: $line-height;
 }
 
 .footer {
