@@ -73,7 +73,6 @@ def prof():
 @app.route('/challenges')
 def challenges():
     jsondata = {'result': [u.as_dict() for u in Challenge.query.all()]}
-    print jsondata
     return render_template('challenges.html', data=jsonify(jsondata))
 
 @github.access_token_getter
