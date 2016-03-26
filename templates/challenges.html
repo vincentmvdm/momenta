@@ -16,7 +16,6 @@
 <div class="container">
   <div class="row page-content">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-<<<<<<< HEAD
       <h1>Challenges</h1>
       <table class="table">
         <thead>
@@ -33,7 +32,7 @@
             <td>{{cha['user1']}}</td>
             <td>{{cha['user2']}}</td>
             <td>{{cha['created_at']}}</td>
-            <td class="challenge-view"><i class="fa fa-chevron-right text-center"></i></td>
+            <td class="challenge-view"><a href="/challenge/{{cha['id']}}"><i class="fa fa-chevron-right text-center"></i></a></td>
           </tr>
           {% endfor %}
         </tbody>
