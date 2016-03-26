@@ -46,10 +46,6 @@ class Challenge(db.Model):
 def index():
     return render_template('index.html')
 
-@app.route('/challenges')
-def challenges():
-    return render_template('challenges.html')
-
 @app.route('/login')
 def login():
     return github.authorize()
@@ -66,8 +62,7 @@ def authorized(oauth_token):
 @app.route('/challenges')
 def challenges():
     jsondata = {'result': [u.as_dict() for u in Challenge.query.all()]}
-    print(jsondata)
-    return jsonify(jsondata)
+    return render_template('challenges.html', data=jsonify(jsondata))
 
 @github.access_token_getter
 def token_getter():
