@@ -46,8 +46,6 @@ def authorized(oauth_token):
 
 @app.route('/challenges')
 def challenges():
-    cursor = mysql.connect().cursor()
-    cursor.execute("SELECT * from challenges")
     return jsonify(Challenge.query.all())
 
 @github.access_token_getter
