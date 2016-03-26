@@ -44,6 +44,10 @@ class Challenge(db.Model):
 def index():
     return render_template('index.html')
 
+@app.route('/challenges')
+def challenges():
+    return render_template('challenges.html')
+
 @app.route('/login')
 def login():
     return github.authorize()

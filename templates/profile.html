@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-<head>
-  <title>vincent fix pls</title>
-</head>
-<body>
-  <p>{{data}}</p>
-  <!--
-  How to use
-  {{python code}}. Examples:
-  {{data['login']}} Output: packlnd or vincentmvdm
-  {{data['avatar_url']}} Output: user image
-  All data strings can be found here, python term: dictionary:
-  https://developer.github.com/v3/users/
-  -->
-</body>
+{% extends "layout.html" %}
+{% block title %}Profile{% endblock %}
+{% block navbar_toggle %}
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+{% endblock %}
+{% block navbar_right %}
+  <li><a href="/challenges">Challenges</a></li>
+  <li class="active"><a href="/callback">Profile<span class="sr-only">(current)</span></a></li>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row page-content">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <img src="{{data['avatar_url']}}" alt="{{data['login']}}" class="img-rounded img-profile">
+      <h3>{{data['name']}}</h3>
+      <!-- Need to add if statements -->
+      <strong>Username</strong><br>
+      {{data['login']}}<br>
+      <strong>Location</strong><br>
+      {{data['location']}}<br>
+      <strong>Biography</strong><br>
+      {{data['bio']}}<br>
+      <strong>Followers</strong><br>
+      {{data['followers']}}<br>
+    </div>
+  </div>
+</div>
+{% endblock %}
