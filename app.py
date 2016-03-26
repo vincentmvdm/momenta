@@ -20,7 +20,7 @@ with open(fp) as cred:
 app.config['GITHUB_CLIENT_ID'] = creds['id']
 app.config['GITHUB_CLIENT_SECRET'] = creds['secret']
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/challenges'
-heroku Heroku(app)
+heroku = Heroku(app)
 github = GitHub(app)
 db = SQLAlchemy(app)
 CORS(app)
