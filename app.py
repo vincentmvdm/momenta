@@ -3,9 +3,9 @@ import os
 from flask.ext.github import GitHub
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.cors import CORS
+from flask.ext.heroku import Heroku
 import json
 import psycopg2
-import urlparse
 
 app = Flask(__name__)
 
@@ -19,13 +19,14 @@ with open(fp) as cred:
 
 app.config['GITHUB_CLIENT_ID'] = creds['id']
 app.config['GITHUB_CLIENT_SECRET'] = creds['secret']
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/challenges'
+heroku Heroku(app)
 github = GitHub(app)
 db = SQLAlchemy(app)
 CORS(app)
 
 class Challenge(db.Model):
+    __tablename__ = "challenges"
     id = db.Column(db.Integer, primary_key=True)
     user1 = db.Column(db.String(80))
     user2 = db.Column(db.String(80))
