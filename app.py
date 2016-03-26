@@ -94,6 +94,15 @@ def challenge(cid):
     cha['is_streak'] = is_streak
     return render_template('challenge.html', data=cha)
 
+@app.route('/challenge_user')
+def cha_usr():
+    if 'user' in request.args:
+        global user
+        c = Challenge(request.args.get('user',''), user, datetime.datetime.now())
+        db.session.add(c)
+        db.session.commit()
+    return jsonify({'status':200})
+
 @github.access_token_getter
 def token_getter():
     return token

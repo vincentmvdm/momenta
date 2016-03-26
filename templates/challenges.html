@@ -24,7 +24,7 @@
             <th>User 1</th>
             <th>User 2</th>
             <th>Days</th>
-            <th></th
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -43,14 +43,14 @@
         <thead>
           <tr>
             <th>Users</th>
-            <th></th
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {% for cha in data['followers'] %}
           <tr>
             <td>{{cha['login']}}</td>
-            <td><button type="button" class="btn btn-primary btn-sm pull-right">Challenge</button></td>
+            <td><button id="{{cha['login']}}" type="button" class="btn btn-primary btn-sm pull-right">Challenge</button></td>
           </tr>
           {% endfor %}
         </tbody>
