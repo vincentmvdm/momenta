@@ -8,6 +8,8 @@ import psycopg2
 import urlparse
 from challenge import Challenge
 
+app = Flask(__name__)
+
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 fp = os.path.join(SITE_ROOT, 'config.json')
 app = Flask(__name__)
@@ -18,13 +20,10 @@ with open(fp) as cred:
 
 app.config['GITHUB_CLIENT_ID'] = creds['id']
 app.config['GITHUB_CLIENT_SECRET'] = creds['secret']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 
 github = GitHub(app)
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
-
 CORS(app)
 
 @app.route('/')
