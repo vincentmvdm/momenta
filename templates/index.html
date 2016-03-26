@@ -7,8 +7,9 @@
 
     <title>Project Name</title>
 
-    <!-- Style sheets -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ url_for('static', filename='css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
 
@@ -22,9 +23,9 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <h1 class="text-center animated fadeIn">Project Name</h1>
+          <h1 class="animated fadeIn">Project Name</h1>
           <form>
-            <button type="button" class="btn btn-primary center-block">Log in with GitHub</button>
+            <button type="button" class="btn btn-primary">Log in with GitHub</button>
           </form>
         </div>
       </div>
