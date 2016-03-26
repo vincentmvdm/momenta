@@ -7,6 +7,7 @@ from flask.ext.heroku import Heroku
 import json
 import psycopg2
 import datetime
+import requests
 
 app = Flask(__name__)
 
@@ -77,7 +78,18 @@ def challenges():
 
 @app.route('/challenge/<cid>')
 def challenge(cid):
-    return render_template('challenge.html')
+    cha=Challenge.query.get(cid).as_dict()
+    resp1 = requests.get(
+        'https://shrouded-oasis-42259.herokuapp.com',
+        params={'uname': cha['user1']}).json()['data']
+    resp2 = requests.get(
+        'https://shrouded-oasis-42259.herokuapp.com',
+        params={'uname': cha['user2']}).json()['data']
+    i1 = int(resp1)
+    i2 = int(resp2)
+    is_streak = 'yes' if i1 != 0 and i2 != 0 else 'no'
+    cha['is_streak'] = is_streak
+    return render_template('challenge.html', data=cha)
 
 @github.access_token_getter
 def token_getter():
